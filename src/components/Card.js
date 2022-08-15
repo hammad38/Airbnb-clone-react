@@ -1,22 +1,30 @@
 import React from "react";
-import katie from "../images/katie.png";
 import star from "../images/star.png";
-import details from "../images/details.png";
-import tag from "../images/tag.png";
 
-const Card = () => {
+//object props
+const Card = ({ img, rating, reviewCount, location, title, price, openSpots }) => {
+
+  let badgeText 
+  if(openSpots === 0){
+    badgeText = "SOLD OUT"
+  }else if(location==="Online"){
+    badgeText = "ONLINE"
+  }
+
   return (
-    
     <div className="card">
-      <img className="card--image" src={katie} />
+      {openSpots === 0 && <div className="card--badge">{badgeText}</div>}
+      <img className="card--image" src={img} />
       <div className="card--stats">
-        <img src={star} className="card--star   " />
-        <span>5.0</span>
-        <span className="gray">(6) •</span>
-        <span className="gray">USA</span>
+        <img src={star} className="card--star" />
+        <span>{rating}</span>
+        <span className="gray"> ({reviewCount}) •</span>
+        <span className="gray">{location}</span>
       </div>
-        <p>Life lessons with Katie Zaferes</p>
-        <p><span className="bold">From $136 </span> / person</p>
+      <p className="card--title">{title}</p>
+      <p className="card--price">
+        <span className="bold">From ${price} </span> / person
+      </p>
     </div>
   );
 };
