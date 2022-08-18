@@ -10,7 +10,6 @@ const Card = ({
   title,
   price,
   openSpots,
-  item,
 }) => {
   let badgeText;
   if (openSpots === 0) {
@@ -22,22 +21,12 @@ const Card = ({
   return (
     <div className="card">
       {badgeText && <div className="card--badge">{badgeText}</div>}
-      <img 
-      className="card--image" src={img} 
-
-      />
-      <div 
-      className="card--stats">
-        <img src={star} className="card--star" />
-        <span>
-        {rating}
-        </span>
-        <span className="gray"> 
-        ({reviewCount}) •
-        </span>
-        <span className="gray">
-        {location}
-        </span>
+      <img className="card--image" src={img} alt="" />
+      <div className="card--stats">
+        <img src={star} alt="" className="card--star" />
+        <span>{rating}</span>
+        <span className="gray">({reviewCount}) •</span>
+        <span className="gray">{location}</span>
       </div>
       <p className="card--title">{title}</p>
       <p className="card--price">

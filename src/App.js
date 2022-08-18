@@ -3,9 +3,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Card from "./components/Card";
 import "./style.css";
-import katie from "./images/katie.png";
-import wedding from "./images/wedding-photography.png";
-import biking from "./images/mountain-bike.png";
 import data from "./components/data";
 
 const App = () => {
